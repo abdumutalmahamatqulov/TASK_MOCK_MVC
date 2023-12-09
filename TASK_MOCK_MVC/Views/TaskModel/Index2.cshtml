@@ -1,0 +1,38 @@
+﻿﻿@using NonFactors.Mvc.Grid;
+@model IEnumerable<TASK_MOCK_MVC.Entities.TaskModel>;
+
+<style>
+    .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="user-table">
+    @(Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Id).Titled("Id").Filterable(true).Sortable(true);
+            columns.Add(model => model.Title).Titled("Title").Filterable(true).Sortable(true);
+            columns.Add(model => model.Description).Titled("Description").Filterable(true).Sortable(true);
+            columns.Add(model => model.DueDate).Titled("DueDate").Filterable(true).Sortable(true);
+            columns.Add(model => model.Status).Titled("Status").Filterable(true).Sortable(true);
+            columns.Add() 
+            .Encoded(false)
+            .RenderedAs(model =>
+            {
+                return $@"
+                <a class=""btn-update"" asp-controller=""TaskModel"" asp-action=""Edit"">Edit</a>
+                <button class=""btn-confirm hide"" asp-controller=""TaskModel"" asp-action=""Edit"" type=""submit"">Confirm</button>
+                <button class=""btn-delete"" asp-controller=""TaskM0del"" asp-action=""DeleteTask"" type=""submit"">Delete</button>
+                <a class=""btn-cancel hide"">Cancel</a>
+                ";
+            })
+            .Titled("Actions");
+        })
+        )
+</div>
+
+

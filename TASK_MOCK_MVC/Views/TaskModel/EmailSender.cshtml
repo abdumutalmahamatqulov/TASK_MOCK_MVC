@@ -1,0 +1,21 @@
+﻿@model TASK_MOCK_MVC.Dto_s.NotificationModel
+<body>
+    <div class=" col-md-4">
+        <form asp-controller="TaskModel" asp-action="EmailSender" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="EmailSender" class="btn btn-primary my-2" />
+            </div>
+        </form>
+    </div>
+</body>

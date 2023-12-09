@@ -1,0 +1,19 @@
+﻿@model TASK_MOCK_MVC.Entities.TaskModel
+@{
+    ViewData["Title"] = "Delete";
+}
+<h1>Delete</h1>
+<body>
+	<form asp-controller="TaskModel " asp-action="Delete" method="post" enctype="multipart/form-data" class="col-md-6" style="margin: 5px auto;">
+		<div class="login-box">
+			<h1>TaskModel</h1>
+			<div class="textbox>
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<input asp-for="Id" type="number" id="form1-Admin" placeholder="Id">
+			</div>
+			<button asp-controller="TaskModel" asp-action="Delete" type="submit" class="btn btn-pill btn-outline-info" style="width: 100%;">
+				<i class="fa fa-sign-in mr-1"></i> Delete
+			</button>
+		</div>
+	</form>
+</body>
